@@ -1,0 +1,37 @@
+{
+  "envId": "framework-14c813",
+  "framework": {
+    "name": "nuxt-ssr",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-nuxt",
+        "inputs": {}
+      },
+      "static": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "buildCommand": "npm run build",
+          "outputPath": ".nuxt/dist/client/",
+          "cloudPath": "/nuxt-ssr/"
+        }
+      },
+      "server": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "./cloudfunctions",
+          "functions": [
+            {
+              "name": "nuxt-ssr-echo",
+              "config": {
+                "timeout": 5,
+                "envVariables": {},
+                "runtime": "Nodejs10.15",
+                "memorySize": 128
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
