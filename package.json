@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@cloudbase/vue-provider": "^0.1.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^3.4.3"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.27",
